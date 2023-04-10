@@ -1,2 +1,118 @@
-@use '../abstracts/_mixins';
-@use '../abstracts/_variables';
+@use "../abstracts/_mixins";
+@use "../abstracts/_variables";
+
+// COLORS
+$black: #161722;
+$primary-color: #ffd2a4;
+$light-orange: #fff5eb;
+$grey: #f5f2f0;
+$white: #ffffff;
+main {
+  background-color: $grey;
+  padding-top: 208px;
+}
+#sermon-event__home {
+  padding-bottom: 128px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 128px;
+  .sermon-event-home__left {
+    display: flex;
+    flex-direction: column;
+    * {
+      max-width: 100%;
+    }
+    a {
+      background: linear-gradient(109.61deg, #a54e2b -53.83%, #dc9853 62.61%);
+      // -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-top: 32px;
+      margin-bottom: 0px;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 14px;
+    }
+    h1 {
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 64px;
+      color: $black;
+      margin-bottom: 16px;
+    }
+    p {
+      margin-bottom: 30px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: $black;
+    }
+    h4 {
+      margin-bottom: 30px;
+      font-weight: 400;
+      font-size: 21px;
+      line-height: 150%;
+      color: $black;
+      padding-left: 19px;
+      border-left: 3px solid $primary-color;
+    }
+    span {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: $black;
+    }
+  }
+
+  .sermon-event-home__right {
+    width: 100%;
+    background-color: $white;
+    height: 414px;
+    padding: 40px;
+    .ser-event-reg {
+      margin-bottom: 32px;
+      display: flex;
+      p {
+        margin-right: 20px;
+        display: flex;
+        align-items: flex-start;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: $black;
+      }
+      img {
+        margin-right: 8px;
+      }
+    }
+    form {
+      .seRow1 {
+        margin-bottom: 32px;
+        label {
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 16px;
+          color: $black;
+          margin-bottom: 12px;
+        }
+        input {
+          border: none;
+          outline: none;
+        }
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 8px;
+        border-bottom: 1px solid $black;
+      }
+      button {
+        @include button($primary-color, $black, 24px, 64px, 12px);
+        border: none;
+      }
+    }
+  }
+}
+@media (max-width: 1115px) {
+  #sermon-event__home {
+    grid-template-columns: repeat(1, 1fr);
+  grid-gap: 128px;
+  }
+}
