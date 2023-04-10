@@ -1105,6 +1105,26 @@ template {
     align-self: center;
   }
 }
+@media only screen and (max-width: 446px) {
+  .benefit_container .benefit_card {
+    transform: translatex(50px);
+  }
+}
+@media only screen and (max-width: 430px) {
+  .benefit_container .benefit_card {
+    transform: translatex(40px);
+  }
+}
+@media only screen and (max-width: 420px) {
+  .benefit_container .benefit_card {
+    transform: translatex(30px);
+  }
+}
+@media only screen and (max-width: 410px) {
+  .benefit_container .benefit_card {
+    transform: translatex(20px);
+  }
+}
 .benefit_container .benefit_card img {
   transition: 0.5s all ease;
 }

@@ -380,6 +380,18 @@ $rem-base: 16px;
         margin: 0 auto;
         align-self: center;
       }
+      @include media(446px){
+        transform: translatex(50px);
+      }
+      @include media(430px){
+        transform: translatex(40px);
+      }
+      @include media(420px){
+        transform: translatex(30px);
+      }
+      @include media(410px){
+        transform: translatex(20px);
+      }
       img {
         transition: 0.5s all ease;
       }
