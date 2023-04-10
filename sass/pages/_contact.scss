@@ -1,2 +1,115 @@
-@use '../abstracts/_mixins';
-@use '../abstracts/_variables';
+@use "../abstracts/_mixins";
+@use "../abstracts/_variables";
+// COLORS
+$black: #161722;
+$primary-color: #ffd2a4;
+$light-orange: #fff5eb;
+$grey: #f5f2f0;
+$white: #ffffff;
+
+#contact__home-section {
+  background-image: url(../../assets/images/contact/contact-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 100px;
+  padding-bottom: 160px;
+}
+.contact__home-section {
+  padding-top: 75px;
+  a {
+    color: $primary-color;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 16px;
+    font-family: "Roboto Condensed";
+  }
+  h1 {
+    color: $white;
+    font-size: 48px;
+    max-width: 409px;
+    font-family: "Roboto Condensed";
+  }
+}
+//CONTACT-SEC-2
+#contact__form {
+  background-color: $grey;
+  .contact__form {
+    padding-top: 128px;
+    padding-left: 110px;
+    padding-bottom: 128px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 128px;
+    .contact__form-left {
+      max-width: 624px;
+      form {
+        display: flex;
+        flex-direction: column;
+        p {
+          font-size: 24px;
+          margin-bottom: 32px;
+          font-weight: 700;
+          color: $black;
+        }
+        input {
+          border: none;
+          outline: none;
+          padding: 20px;
+          font-size: 16px;
+          border-radius: 4px;
+          margin-bottom: 12px;
+          background-color: $white;
+          color: $black;
+        }
+        input:last-child {
+          padding-bottom: 72px;
+        }
+        button {
+          @include button($primary-color, $black, 24px, 0px, 12px);
+          border: none;
+        }
+      }
+    }
+    .contact__form-right {
+      padding-top: 55px;
+      .contac__info {
+        margin-bottom: 32px;
+        p:first-child {
+          color: $black;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 21px;
+          margin-bottom: 8px;
+        }
+        p:last-child {
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 28px;
+        }
+        img {
+          width: 25px;
+          margin-right: 32px;
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1120px) {
+  .contact__form {
+    display: flex !important;
+    flex-direction: column !important;
+    padding-left: 1.5rem !important;
+    align-items: center;
+  }
+  .contact__form-left {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .contact__home-section {
+    h1 {
+      text-align: center;
+    }
+  }
+}
