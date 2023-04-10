@@ -1,2 +1,596 @@
-@use '../abstracts/_mixins';
-@use '../abstracts/_variables';
+@use "../abstracts/_mixins";
+@use "../abstracts/_variables";
+
+#serving {
+  padding: 248px 0 160px;
+  background-image: url(../../assets/images/about_us/about-main-bg.jpg);
+  background-size: cover;
+}
+
+.home__container {
+  padding: 100px 0;
+  .home__content {
+    span {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+      text-transform: uppercase;
+      color: #161722;
+    }
+    h2 {
+      margin-top: 16px;
+      @include heading(h2);
+    }
+  }
+  @include flexbox(row, flex-start, center);
+  flex-wrap: wrap;
+  @include media(400px) {
+    .home__content {
+      text-align: center;
+    }
+  }
+}
+
+// Love Start
+
+#love {
+  padding: 130px 0;
+  .love__title {
+    @include flexbox(column, center, center);
+    text-align: center;
+    margin-bottom: 48px;
+    h5 {
+      @include label(label2);
+      margin-bottom: 16px;
+    }
+    h2 {
+      @include heading(h2);
+      margin-bottom: 32px;
+      @include media(500px) {
+        font-size: 35px;
+      }
+    }
+  }
+  p {
+    @include paragraph;
+    max-width: 768px;
+  }
+  .love__cards {
+    @include flexbox(row, center, center);
+    gap: 24px;
+    flex-wrap: wrap;
+    @include media(1080px) {
+      .first_imag2 {
+        @include media(1000px) {
+          flex-basis: 50%;
+        }
+      }
+      .first_img2 {
+        @include media(1080px) {
+          flex-basis: 60%;
+          order: 1;
+        }
+      }
+    }
+    img,
+    .first_img2 {
+      @include media(415px) {
+        width: 100%;
+      }
+    }
+  }
+  .love__title2 {
+    margin-top: 64px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    @include media(800px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 80px;
+    }
+    .love__title2-card {
+      max-width: 372px;
+      @include media(800px) {
+        max-width: 90%;
+      }
+      @include media(500px) {
+        max-width: 100%;
+      }
+      h5 {
+        @include label(label2);
+        margin-bottom: 16px;
+      }
+      h4 {
+        @include heading(h4);
+        margin-bottom: 16px;
+        @include media(450px) {
+          font-size: 26px;
+        }
+      }
+    }
+  }
+}
+
+// Love End
+
+// Benefits Start
+
+#benefits {
+  padding: 128px 0;
+}
+
+.benefits__container {
+  .benefits-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h5 {
+      @include label(label2);
+      margin-bottom: 16px;
+    }
+    h2 {
+      @include heading(h2);
+      max-width: 432px;
+      text-align: center;
+
+      @include media(500px) {
+        font-size: 35px;
+      }
+    }
+  }
+  .benefits-cardblock {
+    margin-top: 65px;
+    @include flexbox(column, center, center);
+    gap: 96px;
+    .benefits-card {
+      @include flexbox(row, center, center);
+      gap: 50px;
+      @include media(1060px) {
+        flex-wrap: wrap;
+        .benefits-card-content1 {
+          background-image: linear-gradient(
+              rgba(0, 0, 0, 0.5),
+              rgba(0, 0, 0, 0.5)
+            ),
+            url(../../assets/images/about_us/about-benefit-1.png);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background: linear-gradient();
+        }
+        .benefits-card-content2 {
+          background-image: linear-gradient(
+              rgba(0, 0, 0, 0.5),
+              rgba(0, 0, 0, 0.5)
+            ),
+            url(../../assets/images/about_us/about-benefit-2.png);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background: linear-gradient();
+        }
+        .benefits-card-content3 {
+          background-image: linear-gradient(
+              rgba(0, 0, 0, 0.5),
+              rgba(0, 0, 0, 0.5)
+            ),
+            url(../../assets/images/about_us/about-benefit-3.png);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background: linear-gradient();
+        }
+        .benefits-card-content4 {
+          background-image: linear-gradient(
+              rgba(0, 0, 0, 0.5),
+              rgba(0, 0, 0, 0.5)
+            ),
+            url(../../assets/images/about_us/about-benefit-4.png);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background: linear-gradient();
+        }
+        .benefits-card-content {
+          display: flex;
+          flex-direction: column;
+          gap: 25px;
+          text-align: center;
+          padding: 150px 0;
+          width: 90%;
+          text-align: center;
+
+          p {
+            margin: 0 auto;
+            max-width: 80%;
+            color: white;
+            opacity: 1;
+          }
+          h4 {
+            color: white;
+          }
+        }
+        .benefits-card-img {
+          display: none;
+        }
+      }
+      @include media(800px) {
+        .benefits-card-content {
+          padding: 100px 0;
+        }
+      }
+      @include media(600px) {
+        .benefits-card-content {
+          width: 100%;
+          padding: 50px 0;
+        }
+      }
+    }
+    .benefits-card-content {
+      h4 {
+        @include heading(h4);
+      }
+      p {
+        @include paragraph;
+        max-width: 500px;
+        margin-top: 16px;
+      }
+    }
+  }
+}
+
+// Benefits End
+
+// Members Start
+#members {
+  padding-bottom: 128px;
+
+  .members_heading {
+    text-align: center;
+    h5 {
+      @include label(label2);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    h2 {
+      @include heading(h2);
+
+      @include media(500px) {
+        font-size: 35px;
+      }
+    }
+  }
+  .members_cardblock {
+    margin-top: 64px;
+    @include flexbox(row);
+    gap: 25px;
+
+    @include media(1280px) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .members_card {
+      padding: 48px 0;
+      background: $grey;
+      width: 305px;
+      @include flexbox(column, center, center);
+      text-align: center;
+      transition: 0.5s;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: 0 0 5px 3px inset #fac38c;
+        background: linear-gradient(rgba(106, 106, 106, 0.5), #fff5eb);
+      }
+      &:hover .members_card-img img {
+        transform: scale(1.1);
+      }
+      .members_card-img {
+        img {
+          margin-bottom: 26px;
+          transition: 0.5s;
+        }
+      }
+      h5 {
+        @include heading(h5);
+        margin-bottom: 10px;
+      }
+      p {
+        @include paragraph;
+        margin-bottom: 16px;
+      }
+      .members_card-socialmedia {
+        @include flexbox(row, center, center);
+        gap: 20px;
+      }
+    }
+  }
+}
+
+// footer {
+//   background: $black;
+//   padding: 64px 0;
+
+//   .footer__container {
+//     @include flexbox(row, space-between, center);
+//   }
+//   .footer__logo {
+//     @include flexbox(column, center);
+//     gap: 32px;
+//     h5 {
+//       @extend .cap2;
+//       text-align: start !important;
+//       // font-size: 14px !important;
+//     }
+//   }
+//   .footer__left-p {
+//     margin-top: 32px;
+//     @include flexbox(column);
+//     gap: 16px;
+
+//     p {
+//       @extend .cap2;
+//       text-align: left !important;
+//       // font-size: 14px !important;
+//     }
+//   }
+//   .footer__right {
+//     @include flexbox;
+//     gap: 120px;
+//     // @include media(1150px) {
+//     //       display: grid;
+//     // grid-template-columns: repeat(1, 1fr);
+//     // grid-row-gap: 50px;
+//     // }
+//     .footer__menu {
+//       @include flexbox(row);
+//       gap: 72px;
+//       .footer-menus {
+//         a {
+//           @include paragraph;
+//           color: white;
+//         }
+//         p {
+//           @include paragraph;
+//           color: white;
+//           font-size: 18px;
+//         }
+//         li {
+//           margin: 10px 0;
+//         }
+//       }
+//       .footer-connect {
+//         p {
+//           @include paragraph;
+//           color: white;
+//           font-size: 18px;
+//           margin-bottom: 20px;
+//         }
+//         .footer-connect-img {
+//           @include flexbox;
+//           gap: 20px;
+//         }
+//       }
+//     }
+//   }
+//   .footer__subscribe {
+//     h4 {
+//       @include heading(h4);
+//       color: white;
+//       max-width: 377px;
+//       margin-bottom: 32px;
+//     }
+//     form {
+//       position: relative;
+//       @include flexbox;
+//       input {
+//         width: 512px;
+//         border: 1px solid rgba(255, 255, 255, 0.15);
+//         border-radius: 12px;
+//         // border-top-right-radius: 0;
+//         // border-bottom-right-radius: 0;
+//         padding: 20px;
+//         background: transparent;
+//         @include paragraph;
+//         &::placeholder {
+//           @include paragraph;
+//           color: white;
+//         }
+//       }
+//       button {
+//         position: absolute;
+//         right: 0;
+//         @include button($primary-color, $black, 24px, 64px, 12px);
+//         // border-top-left-radius: 0;
+//         // border-bottom-left-radius: 0;
+//         border: none;
+//       }
+//     }
+//   }
+// }
+
+// @include media (1150px) {
+//   footer .footer__container {
+//     flex-direction: column;
+//     grid-row-gap: 50px;
+//   }
+//   .footer__logo{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//   }
+//   .footer__left-p{
+//     align-items: center;
+//   }
+//   footer .footer__right {
+//     text-align: center;
+
+//   }
+//   .footer__menu {
+//     justify-content: center;
+//   }
+// }
+
+footer {
+  background: $black;
+  padding: 64px 0;
+
+  .footer__container {
+    @include flexbox(row, space-between);
+    .footer-logo {
+      @include flexbox(column);
+      span {
+        margin-top: 25px;
+        @extend .cap2;
+      }
+      ul {
+        margin-top: 32px;
+        @include flexbox(column);
+        gap: 16px;
+
+        a {
+          @extend .cap2;
+          font-size: 12px !important;
+        }
+      }
+    }
+    .footer-media {
+      margin-left: 200px;
+      margin-right: 90px;
+      @include flexbox;
+      gap: 70px;
+
+      .footer-menu {
+        h5 {
+          @extend .cap2;
+        }
+        ul {
+          @include flexbox(column);
+          gap: 24px;
+        }
+        a {
+          @extend .cap2;
+          font-size: 12px !important;
+        }
+      }
+      .connect {
+        @include flexbox(column, 0, center);
+        gap: 20px;
+        h5 {
+          @extend .cap2;
+          text-align: center;
+        }
+        .connect-img {
+          @include flexbox;
+          gap: 20px;
+        }
+      }
+    }
+    .footer-subscribe {
+      h4 {
+        @include heading(h4);
+        color: white;
+        max-width: 377px;
+        margin-bottom: 32px;
+      }
+      form {
+        position: relative;
+        @include flexbox;
+        input {
+          width: 512px;
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          border-radius: 12px;
+          // border-top-right-radius: 0;
+          // border-bottom-right-radius: 0;
+          padding: 20px;
+          background: transparent;
+          @include paragraph;
+          &::placeholder {
+            @include paragraph;
+            color: white;
+          }
+        }
+        button {
+          position: absolute;
+          right: 0;
+          @include button($primary-color, $black, 24px, 64px, 12px);
+          // border-top-left-radius: 0;
+          // border-bottom-left-radius: 0;
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1220px) {
+  footer .footer__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+  }
+  .footer_bottom {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  footer .footer__container .footer-media {
+    margin-left: 0;
+    margin-right: 0px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  footer .footer__container .footer-logo ul {
+    margin: 32px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+  .cap2,
+  footer .footer__container .footer-logo span {
+    margin: 0 auto;
+  }
+  footer .footer__container .footer-subscribe h4 {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0 30px;
+    max-width: 100%;
+  }
+
+  footer .footer__container .footer-subscribe form {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 30px;
+  }
+  footer .footer__container .footer-subscribe form button {
+    position: static;
+    width: 100%;
+    margin: 0 auto;
+  }
+  footer .footer__container .footer-subscribe form input {
+    width: 100%;
+  }
+  footer .footer__container .footer-logo svg {
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 550px) {
+  footer .footer__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  footer .footer__container .footer-media {
+  padding-top: 50px;
+}
+}
