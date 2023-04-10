@@ -1058,6 +1058,7 @@ template {
   text-align: center;
 }
 .benefit_title h2 {
+  padding-bottom: 35px;
   text-align: center;
   font-weight: 700;
   font-size: 3rem;
@@ -2749,7 +2750,7 @@ footer .footer__container .footer-subscribe form button:hover {
 }
 
 .blog {
-  padding: 64px 20px 1000px;
+  padding: 64px 20px 100px;
 }
 .blog .blog-post-left {
   position: absolute;
@@ -3439,4 +3440,8 @@ footer .footer__container .footer-subscribe form button:hover {
   100% {
     content: "I'm blinking!";
   }
+}
+:root {
+  --animate-duration: 800ms;
+  --animate-delay: 1s;
 }

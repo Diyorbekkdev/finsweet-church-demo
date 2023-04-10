@@ -348,6 +348,7 @@ $rem-base: 16px;
       text-align: center;
     }
     h2 {
+      padding-bottom: 35px;
       text-align: center;
       @include heading(h2);
     }
