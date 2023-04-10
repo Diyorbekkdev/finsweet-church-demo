@@ -7,7 +7,7 @@ $primary-color: #ffd2a4;
 $light-orange: #fff5eb;
 $grey: #f5f2f0;
 $white: #ffffff;
-main {
+#sermon-event__main {
   background-color: $grey;
   padding-top: 208px;
 }
@@ -24,7 +24,7 @@ main {
     }
     a {
       background: linear-gradient(109.61deg, #a54e2b -53.83%, #dc9853 62.61%);
-      // -webkit-background-clip: text;
+      -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-top: 32px;
       margin-bottom: 0px;
@@ -113,6 +113,6 @@ main {
 @media (max-width: 1115px) {
   #sermon-event__home {
     grid-template-columns: repeat(1, 1fr);
-  grid-gap: 128px;
+    grid-gap: 128px;
   }
 }
