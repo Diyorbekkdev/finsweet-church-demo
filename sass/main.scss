@@ -12,3 +12,21 @@
 @import 'pages/sermon-event';
 @import 'pages/contact';
 @import 'humburger/_hamburger';
+
+
+/* CSS styles */
+@keyframes blink {
+    0% {
+      content: "Welcome!";
+    }
+    1%{
+      content: "Welcome!";
+    }
+    50% {
+      content: "Animate me!";
+    }
+    100% {
+      content: "I'm blinking!";
+    }
+}
+  
