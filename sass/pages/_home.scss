@@ -1,0 +1,370 @@
+@use '../abstracts/_mixins' ;
+@use '../abstracts/_variables' ;
+
+// COLORS
+$black: #161722;
+$primary-color: #FFD2A4;
+$light-orange: #FFF5EB;
+$grey: #F5F2F0;
+$white: #FFFFFF;
+// BREK POINTS FOR MEDIA
+$breakpoint-xsmall: 320px;
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 1024px;
+$breakpoint-extra-large: 1300px;
+
+
+$rem-base: 16px;
+
+
+#home{
+    position: relative;
+    // background-image: url('../../assets/images/home/home-main-bg-1.jpg');
+    padding-top: 100px;
+    @include media (768px){
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+
+    }
+    // background-size: cover;
+}
+
+.home{
+    position: relative;
+    &_title{
+        @include media(768px){
+            max-width: 100%;
+        }
+        @include media(470px){
+            text-align: center;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+        position: relative;
+        z-index: 10;
+        margin-top: 128px;
+        padding-bottom: 128px;
+        max-width: 50%;
+        .welcome{
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 19px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+        h1{
+            margin-top: 16px;
+            @include heading(h1);
+            color: #FFFFFF;
+        }
+        a{
+            margin-top: 32px;
+            @include button($primary-color, $black, 24px, 64px, 12px);
+        }
+        .home_info{
+            margin-top: 64px;
+            // @include flexbox(row, flex-start, center);
+            gap: 12px;
+            p{
+                position: relative;
+                @include paragraph;
+                color: #FFFFFF;
+                padding-left: 30px;
+            }
+            p::before{
+                @include media(470px){
+                    background-color: transparent;
+                }
+                content: '';
+                position: absolute;
+                top: 25%;
+                left: 0;
+                transform: translateX(0px);
+                width: 20px; /* Width of the line */
+                height: 2px; /* Height of the line */
+                background-color: #e2aa55;
+                // margin-right: 10px;
+            }
+
+        }
+    }
+}
+
+.slideshow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .mySlides {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+    z-index: 0;
+  }
+  
+  .mySlides.fade.active {
+    opacity: 1;
+}
+
+
+
+// second section
+
+.church{
+    &_title{
+        .label_2{
+            margin-top: 128px;
+            @include label(label2);
+            text-align: center
+        }
+        h2{
+            margin-top: 16px;
+            @include heading(h2);
+            text-align: center;
+        }
+        &-card_container{
+            margin-top: 64px;
+            @include flexbox(row, space-between, center);
+            @include media(960px){
+                @include flexbox(row, space-between, center);
+                flex-wrap: wrap;
+                .ch_card:first-child{
+                    flex-basis: 45%;
+                    @include media(665px){
+                        flex-basis: 100%;
+                    }
+                }
+                .ch_card:nth-child(2){
+                    flex-basis: 45%;
+                    @include media(665px){
+                        flex-basis: 100%;
+                    }
+                }
+                .ch_card:nth-child(3){
+                    flex-basis: 100%;
+                    @include media(665px){
+                        flex-basis: 100%;
+                    }
+                }
+                .ch_card{
+                    position: relative;
+                }
+                
+            } 
+            
+            gap: 24px;
+            .ch_card{
+                margin-bottom: 100px;
+                position: relative;
+                padding: 80px;
+                background: $light-orange;
+                width: 33%;
+                overflow: hidden;
+                box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+                @include flexbox(column, flex-start, flex-start);
+                img{
+                    background: $primary-color;
+                    padding: 12px;
+                    border-radius: 50%;
+                    z-index: 1;
+                    transition: all .3s ease-in;
+                }
+                .for_card{
+                    position: absolute;
+                    display: none;
+                    right: 20px;
+                    top: 39px;
+                    @include media (960px){
+                        display: block;
+                        @include media(665px){
+                            display: none;
+                        }
+                    }
+                }
+                h4{
+                    margin-top: 24px;
+                    @include heading(h4);
+                    z-index: 1;
+                   
+                }
+                p{
+                    transition: max-height .3s ease-in;
+                    @include paragraph;
+                    z-index: 1;
+                }
+                .third_card{
+                    @include media (960px){
+                        width: 60%;
+                        @include media(665px){
+                            width: 100%;
+                        }
+                    }
+                }
+                .hover_line{
+                    position: absolute;
+                    height: 16px;
+                    width: 100%;
+                    left: 0;
+                    bottom: 0;
+                    background-color: $primary-color;
+                    transition: height .6s ease-in;
+                }
+            }
+            .ch_card:hover{
+                img{
+                    transition: all .3s ease-out;
+                    background: #F5F2F0;
+                }
+                .hover_line{
+                    transition: height .6s ease-out;
+                    height: 100%;
+                }
+            }
+             
+        }
+    }
+}
+
+
+
+// third section
+
+.love{
+    &_title{
+        @include flexbox(column, center,center);
+        margin: 0 auto;
+        width: 68%;
+        .sub{
+            text-align: center;
+        }
+        h2{
+            margin-top: 16px;
+            @include heading(h2);
+            text-align: center;
+        }
+        p{
+            margin-top: 32px;
+            @include paragraph;
+            text-align: center;
+        }
+        .read_more{
+            margin-top: 56px;
+            @include button($primary-color, $black, 24px, 64px, 12px)
+        }
+        
+    }
+    &_card_container{
+        margin-bottom: 186px;
+        @include flexbox(row, space-between, center);
+       flex-wrap: wrap;
+       @include media(1000px){
+        margin-top: 35px;
+        @include flexbox(row, center, center);
+        gap: 100px;
+      }
+        .first_imag1{
+            @include media(1000px){
+              flex-basis: 50%;
+            }
+        }
+
+        .first_img2{
+            transform: translateY(140px);
+            @include media(1000px){
+                margin: 0 auto;
+                flex-basis: 80%;
+                order: 3;
+                // height: 500px;
+            }
+            @include media(1000px){
+                flex-basis: 50%;
+                transform: translateY(0px);
+              }
+              @include media(430px){
+                width: 100%;
+                max-width: 400px;
+              }
+        }
+    }
+    &_title2{
+        padding-bottom: 128px;
+        width: 45%;
+        margin: 0 auto;
+        @include media(768px){
+            width: 70%
+          }
+        @include media(430px){
+            width: 100%
+          }
+        .label_2{
+            @include label(label2);
+            text-transform: uppercase;
+            text-align: center;
+        }
+        h4{
+            margin-top: 16px;
+            @include heading(h4);
+            text-align: center;
+        }
+        p{
+            margin-top: 16px;
+            @include paragraph;
+            text-align: center;
+        }
+        .wrap{
+            margin-top: 16px;
+            text-align: center;
+            transition: .3s ease-out;
+            a{
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 16px;
+                // display: flex;
+                // // align-items: flex-end;
+                color: #161722;
+            }
+            img{
+                transition: .3s ease-in;
+            }
+        }
+        .wrap:hover{
+            img{
+                transition: .3s ease-out;
+                transform: translateX(10px);
+            }
+        }
+    }
+}
+
+
+// fourth section
+.benefit{
+    &_title{
+        .lab{
+            @include label(label2);
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+            @include heading(h2);
+        }
+
+    }
+    &_container{
+        @include flexbox(row, space-between, center);
+        .benefit_card{
+            h5{
+                @include heading(h5)
+            }
+        }
+    }
+}

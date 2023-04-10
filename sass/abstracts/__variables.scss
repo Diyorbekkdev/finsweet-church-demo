@@ -1,0 +1,35 @@
+// COLORS
+$black: #161722;
+$primary-color: #FFD2A4;
+$light-orange: #FFF5EB;
+$grey: #F5F2F0;
+$white: #FFFFFF;
+// BREK POINTS FOR MEDIA
+$breakpoint-xsmall: 320px;
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 1024px;
+$breakpoint-extra-large: 1300px;
+
+
+$rem-base: 16px;
+
+
+
+
+// CONTAINERS
+.container{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+.about_container{
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.blog_post_container{
+    max-width: 768px;
+    margin: 0 auto;
+}

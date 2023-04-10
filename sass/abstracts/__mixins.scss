@@ -1,0 +1,257 @@
+@use '_variables';
+
+
+@function calculateRem($size) {
+  @return calc($size / $rem-base) * 1rem;
+}
+
+// HEADINGLAR UCHUN
+@mixin heading($heading) {
+  $font-sizes: (
+    h1: 64px,
+    h2: 48px,
+    h3: 40px,
+    h4: 32px,
+    h5: 24px,
+    h6: 16px
+  );
+
+  $line-heights: (
+    h1: 82px,
+    h2: 64px,
+    h3: 56px,
+    h4: 44px,
+    h5: 28px,
+    h6: 24px
+  );
+
+  font-weight: 700;
+  font-size: calculateRem(map-get($font-sizes, $heading));
+  line-height: calculateRem(map-get($line-heights, $heading));
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #161722;
+}
+
+
+// LABEL HEADINGLAR UCHUN
+@mixin label($label) {
+  $font-sizes: (
+    label1: 24px,
+    label2: 16px,
+    label3: 18px
+  );
+
+  $line-heights: (
+    label1: 32px,
+    label2: 19px,
+    label3: 21px
+  );
+  font-family: 'Roboto Condensed';
+  font-weight: 400;
+
+  font-size: calculateRem(map-get($font-sizes, $label));
+  line-height: calculateRem(map-get($line-heights, $label));
+}
+
+// PARAGHRAPH UCHUN
+@mixin paragraph{
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 24px;
+    color: #161722;
+    opacity: 0.78;
+}
+
+// caption 3 uchun
+@mixin cap3{
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: linear-gradient(109.61deg, #A54E2B -53.83%, #DC9853 62.61%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+
+// ISHLATILISHI
+
+// h1 {
+//     @include heading(h1);
+//   }
+  
+//  .label {
+//     @include label(label1);
+//   }
+  
+//   p {
+//     @include label(label2);
+//   }
+//  p{
+//     @include cap3();
+//  }
+
+
+
+// GRID UCHUN MIXIN
+@mixin grid($cols, $gap) {
+    display: grid;
+    grid-template-columns: repeat($cols, 1fr);
+    grid-gap: $gap;
+}
+
+
+// ISHLATILISHI
+// .grid-container {
+//     @include grid(3, 20px);
+// }
+
+
+// Mixin for Flexbox
+@mixin flexbox($direction: row, $justify: flex-start, $align: stretch) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+// ISHLATILISHI
+// .container {
+//     @include flexbox(column, center, flex-start);
+// }
+  
+
+
+// Mixin for buttons
+@mixin button($background-color, $text-color, $padding-y, $padding-x, $border-radius) {
+    display: inline-block;
+    padding: $padding-y $padding-x;
+    border-radius: $border-radius;
+    background-color: $background-color;
+    color: $text-color;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    line-height: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: darken($background-color, 10%);
+    }
+  }
+  // @function button-size($size) {
+  //   @if $size == "nav" {
+  //     $padding-y: 20px;
+  //     $padding-x: 48px;
+  //     $border-radius: 12px;
+  //   } @else if $size == "black" {
+  //     $padding-y: 24px;
+  //     $padding-x: 64px;
+  //     $border-radius: 12px;
+  //   } @else if $size == "main" {
+  //     $padding-y: 24px;
+  //     $padding-x: 64px;
+  //     $border-radius: 12px;
+  //   } @else {
+  //     @error "Invalid button size specified: #{$size}. Must be 'nav', 'black', or 'main'.";
+  //   }
+  
+  //   @return $padding-y $padding-x $border-radius;
+  // }
+  
+//   ISHLATILISHI
+//   .my-button {
+//     @include button(#007bff, #fff, 12px, 24px, 6px);
+//   }
+
+
+// MIXIN FOR MEDIA
+// @mixin min-width($breakpoint) {
+//     @if ($breakpoint == xsmall) {
+//       @media (min-width: $breakpoint-xsmall) {
+//         @content;
+//       }
+//     } @else if ($breakpoint == small) {
+//       @media (min-width: $breakpoint-small) {
+//         @content;
+//       }
+//     } @else if ($breakpoint == medium) {
+//       @media (min-width: $breakpoint-medium) {
+//         @content;
+//       }
+//     } @else if ($breakpoint == large) {
+//       @media (min-width: $breakpoint-large) {
+//         @content;
+//       }
+//     } @else if ($breakpoint == xlarge) {
+//       @media (min-width: $breakpoint-extra-large) {
+//         @content;
+//       }
+//     } @else {
+//       @error "UNKNOWN MEDIA BREAKPOINT #{$breakpoint}";
+//     }
+//   }
+
+@mixin media($size) {
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
+
+//   ISHLATILISHI
+// div {
+//     @include media.min-width(small) {
+//         background: red;
+//     }
+
+//     @include media.min-width(large) {
+//         background: green;
+//     }
+// }
+
+
+.cap2{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: right;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0.9;
+}
+  
+  
+
+  .hover-underline-animation {
+    display: inline-block;
+    position: relative;
+
+  }
+  
+  .hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+
+
+  
+
