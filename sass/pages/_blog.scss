@@ -1,2 +1,130 @@
-@use '../abstracts/_mixins';
-@use '../abstracts/_variables';
+@use "../abstracts/_mixins";
+@use "../abstracts/_variables";
+
+.resent {
+  padding-top: 208px;
+  background: $grey;
+  &-post_title {
+    text-align: center;
+    h2 {
+      @include heading(h2);
+      margin-top: 16px;
+    }
+  }
+  .post-box {
+    @include flexbox();
+    align-items: center;
+    gap: 48px;
+    padding: 3.5rem;
+    background-color: $white;
+    margin-top: 64px;
+    .right {
+      max-width: 520px;
+      .right-top {
+        @include flexbox(row, space-between);
+        p {
+          @include label(label2);
+          text-transform: uppercase;
+        }
+      }
+      h4 {
+        @include heading(h4);
+        margin-top: 12px;
+      }
+      p {
+        @include paragraph;
+        margin-top: 16px;
+      }
+      .right-read_more {
+        @include button($primary-color, $black, 24px, 64px, 12px);
+        text-transform: uppercase;
+        margin-top: 32px;
+      }
+    }
+    @include media(1100px) {
+      flex-direction: column;
+      .left,
+      .left img {
+        width: 100%;
+      }
+    }
+    @include media(420px) {
+      padding: 30px;
+      gap: 24px;
+      .right {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.blog-post {
+  background-color: $grey;
+  padding: 128px 0;
+  &_container {
+    .blog-post_title h2 {
+      @include heading(h2);
+      text-align: center;
+    }
+    .blog-post_box {
+      @include grid(4, 24px);
+      margin-top: 64px;
+      .post-card {
+        padding: 48px 32px;
+        position: relative;
+        max-width: 302px;
+        background-color: $white;
+        box-shadow: 0px 5px 5px 2px rgba(34, 60, 80, 0.2);
+        p {
+          position: relative;
+          z-index: 1;
+        }
+        .card-content {
+          .top {
+            @include cap3();
+          }
+          h5 {
+            position: relative;
+            z-index: 1;
+            @include heading(h5);
+            margin-top: 16px;
+          }
+          .lorem {
+            @include paragraph;
+            margin-top: 5px;
+          }
+          .label-3 {
+            @include label(label3);
+            margin-top: 48px;
+          }
+        }
+        .card-bottom {
+          height: 16px;
+          position: absolute;
+          background-color: #ffd0a0;
+          width: 100%;
+          bottom: 0;
+          transition: 1s;
+          left: 0;
+        }
+        &:hover {
+          .card-bottom {
+            height: 100%;
+          }
+        }
+      }
+      @include media(1000px){
+        @include grid(3, 24px);
+      }
+      @include media(700px){
+        @include grid(2, 24px);
+      }
+      @include media(500px){
+        @include grid(1, 24px);
+        .post-card{
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
